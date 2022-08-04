@@ -12,10 +12,10 @@
     </parent>
 	
     <groupId>com.examples.abbasdgr8</groupId>
-    <artifactId>java8-boot272-h2</artifactId>
+    <artifactId>inMemoryH2Database</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>java8-boot272-h2</name>
-    <description>Sample Project trying out Java 8, Spring Boot 2.7.2, and H2 embedded DB</description>
+    <name>inMemoryH2Database</name>
+    <description>An H2 Embedded DB runtime wrapped within Java 8 and Spring Boot 2.7.2</description>
     <properties>
         <java.version>8</java.version>
     </properties>
