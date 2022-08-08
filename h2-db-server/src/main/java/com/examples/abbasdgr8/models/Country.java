@@ -1,6 +1,5 @@
 package com.examples.abbasdgr8.models;
 
-import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -40,5 +39,10 @@ public class Country {
 
     public void setCountry_name(String country_name) {
         this.country_name = country_name;
+    }
+
+    @Override
+    public String toString() {
+        return "Country{" + "id=" + id + ", country_name=" + country_name + '}';
     }
 }
