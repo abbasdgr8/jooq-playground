@@ -6,7 +6,6 @@ import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
 
-import org.apache.cxf.Bus;
 import org.apache.cxf.jaxrs.JAXRSServerFactoryBean;
 import org.h2.tools.Server;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +23,6 @@ import com.examples.abbasdgr8.services.CountryService;
 public class InMemoryH2Database {
 
     private static final Logger LOG = Logger.getLogger(InMemoryH2Database.class.getName());
-    
-    @Autowired
-    private Bus bus;
     
     @Autowired
     private CountryService countryService;
@@ -56,10 +52,10 @@ public class InMemoryH2Database {
     
     @Bean
     public org.apache.cxf.endpoint.Server rsServer() {
-        JAXRSServerFactoryBean endpoint = new JAXRSServerFactoryBean();
-        endpoint.setBus(bus);
-        endpoint.setAddress("/");
-        endpoint.setServiceBean(bus);
-        return endpoint.create();
+        JAXRSServerFactoryBean factoryBean = new JAXRSServerFactoryBean();
+        factoryBean.setResourceClasses();
+        factoryBean.setResourceProvider("/");
+        factoryBean.setAddress(bus);
+        return factoryBean.create();
     }
 }
