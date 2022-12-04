@@ -1,14 +1,10 @@
 package com.examples.abbasdgr8.services;
 
-
+import com.examples.abbasdgr8.repositories.CountryRepository;
+import com.examples.abbasdgr8.models.Country;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.examples.abbasdgr8.models.Country;
-import com.examples.abbasdgr8.repositories.CountryRepository;
-
 
 /**
  * @author Abbas Attarwala <abbas@muon-c.com>

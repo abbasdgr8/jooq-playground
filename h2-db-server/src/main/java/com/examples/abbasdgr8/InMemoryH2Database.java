@@ -6,7 +6,6 @@ import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
 
-import org.apache.cxf.jaxrs.JAXRSServerFactoryBean;
 import org.h2.tools.Server;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -49,13 +48,5 @@ public class InMemoryH2Database {
     public Server inMemoryH2DatabaseServer() throws SQLException {
         return Server.createTcpServer("-tcp", "-tcpAllowOthers", "-tcpPort", "9090");
     }
-    
-    @Bean
-    public org.apache.cxf.endpoint.Server rsServer() {
-        JAXRSServerFactoryBean factoryBean = new JAXRSServerFactoryBean();
-        factoryBean.setResourceClasses();
-        factoryBean.setResourceProvider("/");
-        factoryBean.setAddress(bus);
-        return factoryBean.create();
-    }
+
 }
